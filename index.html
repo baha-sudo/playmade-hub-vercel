@@ -139,8 +139,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
             <h3>PlayMade Network</h3>
             <div class="card-sub">All locations across the UK</div>
             <div class="card-stats">
-                <div class="stat"><div class="num" id="stat-pm-people">65,045</div><div class="lbl">People Activated</div></div>
-                <div class="stat"><div class="num" id="stat-pm-hours">42,060</div><div class="lbl">Hours of Play</div></div>
+                <div class="stat"><div class="num" id="stat-pm-people">64,891</div><div class="lbl">People Activated</div></div>
+                <div class="stat"><div class="num" id="stat-pm-hours">41,431</div><div class="lbl">Hours of Play</div></div>
             </div>
             <span class="view-btn">View Dashboard</span>
         </div>
@@ -151,7 +151,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
             <div class="card-sub">26 play locations</div>
             <div class="card-stats">
                 <div class="stat"><div class="num" id="stat-cam-people">38,908</div><div class="lbl">People Activated</div></div>
-                <div class="stat"><div class="num" id="stat-cam-hours">23,795</div><div class="lbl">Hours of Play</div></div>
+                <div class="stat"><div class="num" id="stat-cam-hours">23,470</div><div class="lbl">Hours of Play</div></div>
             </div>
             <span class="view-btn">View Dashboard</span>
         </div>
@@ -162,7 +162,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
             <div class="card-sub">12 play locations</div>
             <div class="card-stats">
                 <div class="stat"><div class="num" id="stat-isl-people">21,828</div><div class="lbl">People Activated</div></div>
-                <div class="stat"><div class="num" id="stat-isl-hours">14,463</div><div class="lbl">Hours of Play</div></div>
+                <div class="stat"><div class="num" id="stat-isl-hours">14,280</div><div class="lbl">Hours of Play</div></div>
             </div>
             <span class="view-btn">View Dashboard</span>
         </div>
@@ -219,7 +219,7 @@ var dashFiles = {
 };
 
 // Session breakdown data (loaded from summary JSONs at build time)
-var councilData = {"playmade": {"sessions_by_activity": {"Basketball": 3672, "Football": 1605, "Others": 1413, "Pickleball": 99, "Table Tennis": 913}, "duration_by_activity": {"Basketball": 135757.8, "Football": 74276.9, "Others": 42312.7, "Pickleball": 5997.0, "Table Tennis": 33842.4}, "locations": 53, "parks": 42, "pods": 53}, "camden": {"sessions_by_activity": {"Basketball": 2263, "Football": 1008, "Others": 452, "Table Tennis": 732}, "duration_by_activity": {"Basketball": 77777.1, "Football": 42859.2, "Others": 12300.0, "Table Tennis": 27960.9}, "locations": 26}, "islington": {"sessions_by_activity": {"Basketball": 441, "Football": 557, "Others": 934, "Table Tennis": 597}, "duration_by_activity": {"Basketball": 16140.0, "Football": 29958.0, "Others": 28651.0, "Table Tennis": 17339.0}, "locations": 12}};
+var councilData = {"playmade": {"sessions_by_activity": {"Others": 1386.0, "Table Tennis": 1654.17, "Football": 2140.5, "Basketball": 2350.67, "Pickleball": 99.0, "Volleyball": 44.67}, "duration_by_activity": {"Others": 40733.0, "Table Tennis": 61996.67, "Football": 87940.5, "Basketball": 88927.17, "Pickleball": 5949.0, "Volleyball": 1885.67}, "locations": 53, "parks": 43, "pods": 53}, "camden": {"sessions_by_activity": {"Others": 452.0, "Table Tennis": 1267.0, "Football": 1294.5, "Basketball": 1441.5}, "duration_by_activity": {"Others": 12082.0, "Table Tennis": 47121.5, "Football": 48432.0, "Basketball": 51024.5}, "locations": 26}, "islington": {"sessions_by_activity": {"Table Tennis": 597.0, "Football": 770.0, "Others": 934.0, "Basketball": 228.0}, "duration_by_activity": {"Table Tennis": 17339.0, "Football": 37615.5, "Others": 28651.0, "Basketball": 8482.5}, "locations": 12}};
 
 // Saved PPS values (for reset)
 var savedPPS = {"Basketball": 3.2, "Football": 7, "Table Tennis": 4.3, "Volleyball": 4, "Tennis": 2, "Chess": 2, "Kubb": 2.7, "Molkky": 3, "Pickleball": 2, "Yardzee": 3.7, "Badminton": 2, "Cricket": 6, "Others": 3};
@@ -320,8 +320,8 @@ function calcCouncil(name, pps) {
         rawHourWeighted += (dur[activity] || 0) * mult;
     }
     return {
-        people: Math.round(rawPeople * AMPLIFIER),
-        hours: Math.round(rawHourWeighted / 60 * AMPLIFIER)
+        people: Math.floor(rawPeople * AMPLIFIER),
+        hours: Math.floor(rawHourWeighted / 60 * AMPLIFIER)
     };
 }
 
