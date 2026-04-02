@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <!-- KPIs -->
 <div class="kpi-row">
     <div class="kpi"><div class="value" id="kpi-people">5,899</div><div class="label">People Activated</div></div>
-    <div class="kpi"><div class="value" id="kpi-hours">3,973</div><div class="label">Hours of Play</div></div>
+    <div class="kpi"><div class="value" id="kpi-hours">3,972</div><div class="label">Hours of Play</div></div>
     <div class="kpi"><div class="value">99.4%</div><div class="label">Return Rate</div></div>
     <div class="kpi"><div class="value">5</div><div class="label">Active Pod Locations</div></div>
 </div>
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <div class="insight">
     <h3>Executive Summary</h3>
     <ul>
-        <li class="big" id="exec-summary">Based on estimated players per session by activity type, <strong>5,899 people</strong> have been activated — generating <strong>3,973 hours</strong> of free physical activity across 5 pod locations in Kings Cross.</li>
+        <li class="big" id="exec-summary">Based on estimated players per session by activity type, <strong>5,899 people</strong> have been activated — generating <strong>3,972 hours</strong> of free physical activity across 5 pod locations in Kings Cross.</li>
         <li>Kings Cross residents (N1C) account for the largest single user group at <strong>39.8%</strong>, with <strong>54.6%</strong> coming from Kings Cross and its immediate neighbours.</li>
         <li>The return rate of <strong>99.4%</strong> demonstrates exceptional user retention across the Kings Cross play network.</li>
     </ul>
@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded',function(){
         <td>TOTAL</td>
         <td></td>
         <td style="text-align:right;color:#F24A00">5,899</td>
-        <td style="text-align:right">3,973</td>
+        <td style="text-align:right">3,972</td>
         <td style="text-align:right">42 min</td>
     </tr></tfoot>
 </table>
@@ -316,16 +316,7 @@ document.addEventListener('DOMContentLoaded',function(){
     PlayMade - Kings Cross Activity Report | Generated March 30, 2026
 </div>
 <script>
-window.addEventListener('message', function(e) {
-    if (!e.data || e.data.type !== 'pps-update') return;
-    var p = e.data.people, h = e.data.hours;
-    var fmt = function(n) { return n.toLocaleString('en-GB'); };
-    var kpiP = document.getElementById('kpi-people');
-    var kpiH = document.getElementById('kpi-hours');
-    if (kpiP) kpiP.textContent = fmt(p);
-    if (kpiH) kpiH.textContent = fmt(h);
-    var ex = document.getElementById('exec-summary');
-    if (ex) ex.innerHTML = 'Based on estimated players per session by activity type, <strong>' + fmt(p) + ' people</strong> have been activated — generating <strong>' + fmt(h) + ' hours</strong> of free physical activity across 5 pod locations in Kings Cross.';
-});
+// PPS recalculation disabled — using verified figures
+// window.addEventListener('message', function(e) { ... });
 </script>
 </body></html>
