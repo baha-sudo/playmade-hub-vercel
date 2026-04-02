@@ -100,7 +100,7 @@ function checkCode(){
     }
 }
 document.addEventListener('DOMContentLoaded',function(){
-    if(new URLSearchParams(window.location.search).get('embed')==='1'){document.getElementById('auth-overlay').style.display='none';return;}
+    if(new URLSearchParams(window.location.search).get('embed')==='1'){document.getElementById('auth-overlay').style.display='none';}
     document.getElementById('auth-input').focus();
 });
 </script>
