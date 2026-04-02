@@ -225,7 +225,7 @@ var councilData = {"playmade": {"sessions_by_activity": {"Others": 1386.0, "Tabl
 var savedPPS = {"Basketball": 3.2, "Football": 7, "Table Tennis": 4.3, "Volleyball": 4, "Tennis": 2, "Chess": 2, "Kubb": 2.7, "Molkky": 3, "Pickleball": 2, "Yardzee": 3.7, "Badminton": 2, "Cricket": 6, "Others": 3};
 
 // ─── Auth ────────────────────────────────────────────────────────────────────
-function checkCode() {
+if(new URLSearchParams(window.location.search).get("embed")==="1"){document.getElementById("auth-overlay").style.display="none";}function checkCode() {
     var v = document.getElementById('auth-input').value;
     if (v === '2026') {
         document.getElementById('auth-overlay').style.display = 'none';
