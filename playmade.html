@@ -155,8 +155,7 @@ document.addEventListener('DOMContentLoaded',function(){
         x: ["Under 13","13-17","18-24","25-34","35-44","45-54","55-64","65+"],
         y: [2.2,4.5,35.9,29.8,18.3,7.7,1.3,0.4],
         text: ["2.2%","4.5%","35.9%","29.8%","18.3%","7.7%","1.3%","0.4%"],
-        textposition: "outside",
-        marker: {color: ["#FFB088","#FF8C55","#F24A00","#D94200","#B53700","#8C2A00","#661F00","#401300"]},
+        textposition: "outside", hovertemplate: "%{x}: %{y}%<extra></extra>", marker: {color: ["#FFB088","#FF8C55","#F24A00","#D94200","#B53700","#8C2A00","#661F00","#401300"]},
         type: "bar"
     }], {
         margin: {t:30,b:50,l:50,r:20},
@@ -176,6 +175,7 @@ document.addEventListener('DOMContentLoaded',function(){
         values: [72.9, 24.0, 3.2],
         text: ["72.9%","24.0%","3.2%"],
         textinfo: "label+text",
+        hoverinfo: "skip",
         textposition: "inside",
         textfont: {size:13, color:"#fff"},
         hole: 0.45,
