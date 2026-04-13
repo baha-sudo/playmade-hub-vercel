@@ -166,6 +166,55 @@ document.addEventListener('DOMContentLoaded',function(){
     Heatmap of users' home locations. Boundary = Haringey borough. White dots = play locations. Brighter = more residents.
 </p>
 
+<!-- DEMOGRAPHICS -->
+<h2 class="section-title">Who's Playing?</h2>
+<div class="chart-grid">
+<div class="chart-box">
+    <div id="chart-age-har" class="plotly-graph-div" style="height:340px; width:100%;"></div>
+    <script type="text/javascript">
+    Plotly.newPlot("chart-age-har", [{
+        x: ["Under 13","13-17","18-24","25-34","35-44","45-54","55-64","65+"],
+        y: [1.4,5.1,18.8,29.0,34.8,10.1,0.7,0.0],
+        text: ["1.4%","5.1%","18.8%","29.0%","34.8%","10.1%","0.7%","0.0%"],
+        textposition: "outside",
+        marker: {color: ["#FFB088","#FF8C55","#F24A00","#D94200","#B53700","#8C2A00","#661F00","#401300"]},
+        type: "bar"
+    }], {
+        margin: {t:30,b:50,l:50,r:20},
+        yaxis: {title:{text:"% of Users"},fixedrange:true},
+        xaxis: {title:{text:"Age Group"},fixedrange:true},
+        paper_bgcolor:"white", plot_bgcolor:"white",
+        height:340,
+        annotations: [{text:"Age Distribution of Active Users",xref:"paper",yref:"paper",x:0.5,y:1.08,showarrow:false,font:{size:14,color:"#380717",family:"Arial,sans-serif",weight:700}}]
+    }, {responsive:true,displayModeBar:false});
+    </script>
+</div>
+<div class="chart-box">
+    <div id="chart-gender-har" class="plotly-graph-div" style="height:340px; width:100%;"></div>
+    <script type="text/javascript">
+    Plotly.newPlot("chart-gender-har", [{
+        labels: ["Male","Female","Other"],
+        values: [72.5, 25.4, 2.2],
+        text: ["72.5%","25.4%","2.2%"],
+        textinfo: "label+text",
+        textposition: "inside",
+        textfont: {size:13, color:"#fff"},
+        hole: 0.45,
+        marker: {colors: ["#F24A00","#380717","#FFB088"]},
+        type: "pie",
+        sort: false
+    }], {
+        margin: {t:30,b:30,l:20,r:20},
+        paper_bgcolor:"white",
+        height:340,
+        showlegend:true,
+        legend: {orientation:"h",x:0.5,xanchor:"center",y:-0.05,font:{size:12}},
+        annotations: [{text:"Gender Split",xref:"paper",yref:"paper",x:0.5,y:1.08,showarrow:false,font:{size:14,color:"#380717",family:"Arial,sans-serif",weight:700}}]
+    }, {responsive:true,displayModeBar:false});
+    </script>
+</div>
+</div>
+
 <!-- TIME HEATMAP -->
 <h2 class="section-title">When Do Residents Play?</h2>
 <div class="chart-full chart-box">
